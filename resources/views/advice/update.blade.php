@@ -25,7 +25,7 @@
                         <td>{{ $advice->email }}</td>
                         <td>{{ $advice->advice }}</td>
                         <td>
-                            <a href="{{ route('form-advice') }}" class="btn btn-primary">Edit</a>
+                            <a href="{{ route('form-advice', ['id' => $advice->id]) }}" class="btn btn-primary">Edit</a>
                             {{-- <a href="{{ route('advices.update', $advice->id) }}" class="btn btn-primary">Edit</a> --}}
                             <form action="{{ route('advices.destroy', $advice->id) }}" method="POST" style="display: inline-block;">
                                 @csrf

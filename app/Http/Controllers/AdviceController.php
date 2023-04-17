@@ -45,9 +45,6 @@ class AdviceController extends Controller
     public function update(Request $request, $id)
     {
         $advice = Advice::find($id);
-        // if (!$advice) {
-        //     return redirect()->back()->with('error', 'Advice not found');
-        // }
         $advice->advice = $request->input('advice');
         $advice->save();
         return redirect('/home/pulau')->with('success', 'Advice updated successfully');

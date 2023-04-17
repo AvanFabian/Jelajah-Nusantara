@@ -46,16 +46,18 @@ Route::controller(AuthController::class)->group(function () {
 Route::get('/saran/history', [AdviceController::class, 'history'])->name('saran.history');
 // Create Saran
 Route::post('/saran', [AdviceController::class, 'store'])->name('saran.store');
-// Update Saran
+// Halaman Update Saran
 Route::get('/update-advice', function () {
     $advices = App\Models\Advice::all();
     return view('advice.update', compact('advices'));
 })->name('update-advice');
 // Form update saran
-Route::get('/form-advice/{id}/{name}/{email}/{advice}', function () {
+Route::get('/form-advice/{id}', function ($id) {
     $advice = App\Models\Advice::all();
-    return view('advice.updateform', compact('advice'));
+    return view('advice.updateform', compact('advice', 'id'));
 })->name('form-advice');
+// Function update saran
+Route::put('/update-advice/{id}', [AdviceController::class, 'update'])->name('update-advice-function');
 
 // controller edit function
 Route::get('/advices/{id}/edit', [AdviceController::class, 'update'])->name('advices.update');
