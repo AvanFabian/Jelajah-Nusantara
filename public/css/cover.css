@@ -1,3 +1,74 @@
+
+
+/* nav */
+/* .home{
+    width: 100%;
+    height: 100vh;
+     position: relative;
+     padding: 0%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+} */
+/* 
+nav{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 8%;
+    align-items: center;
+    justify-content: space-between;
+} */
+
+/* 
+nav .logo{
+    width: 80px;
+}
+*/
+/* 
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 40px;
+
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+}
+
+content{
+    text-align: center;
+}
+
+content h1{
+    font-size: 160px;
+    color: white;
+    font-weight: 600;
+} */
+
+/* 
+.nav {
+    position: fixed;
+    margin-top: auto;
+    right: 0;
+  }
+  
+  .nav ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .nav li {
+    margin: 0 10px;
+  }
+  
+  .nav-brand {
+    text-align: center;
+  } */
+  
 /* BANNER ATAU BG */
 @import url(https://fonts.googleapis.com/css?family=Nerko+One);
 html, body {
@@ -5,8 +76,12 @@ html, body {
     padding: 0;
     height: 100%;
     overflow: hidden;
-    animation: fadein 2s; 
+    animation: fadein 2s;
+
+    
 }
+
+
 
 /* membuat animasi fade in */
 @keyframes fadein {
@@ -94,6 +169,10 @@ video {
         }
       }
   
+
+.wrapper .dynamic-txts{
+
+}
 
 
 /* button */
@@ -448,10 +527,6 @@ a:hover{
 }
 
 
-/* Button Login, SignUp, Visitor */
-.text-custom {
-    color: #fff;
-    text-decoration: none;
-}
+/* HOME */
 
 

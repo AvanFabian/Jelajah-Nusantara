@@ -13,23 +13,34 @@
       <div class="forms-container">
         <div class="signin-signup">
           @csrf
-          <form action="{{ route('login.post') }}" method="POST" class="sign-in-form">
+          <form action="{{ url('/login') }}" method="POST" class="sign-in-form">
             @csrf
             <h2 class="title">Sign in</h2>
-            <div class="input-field">
-              <i class="fa fa-user" aria-hidden="true"></i>
-              {{-- Beri name sesuai jenis input agar dikenal Controller re  gister/login --}}
+
+            {{-- USERNAME --}}
+            <div class="input-field @error('username') error @enderror">
+              <i class="fa fa-user"></i>
+              {{-- Beri name sesuai jenis input agar dikenal Controller register/login --}}
               <input type="text" name="username" placeholder="Username" />
+              @error('username')
+                <span class="error-message">{{ $message }}</span>
+              @enderror
             </div>
-            @error('username')
-            <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
-            <div class="input-field">
+            
+
+            {{-- PASSWORD --}}
+            <div class="input-field @error('password') error @enderror">
               <i class="fas fa-lock"></i>
               {{-- Beri name sesuai jenis input agar dikenal Controller register/login --}}
               <input type="password" name="password" placeholder="Password" />
+              @error('password')
+                <span class="error-message">{{ $message }}</span>
+              @enderror
             </div>
-            <input type="submit" value="Login" id="btn" />
+            <input type="submit" value="Login" id="btn" class="btn" />
+
+
+            {{-- PLATFORM --}}
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -48,23 +59,33 @@
           </form>
           <form action="#" class="sign-up-form">
             <h2 class="title">Sign up</h2>
-            <div class="input-field">
+
+            {{-- USER-SIGN --}}
+            <div class="input-field @error('username') error @enderror">
               <i class="fas fa-user"></i>
               {{-- Beri name sesuai jenis input agar dikenal Controller register/login --}}
               <input type="text" name="username" value="{{ old('username') }}" placeholder="Username" />
+              @error('username')
+                <span class="error-message">{{ $message }}</span>
+              @enderror
             </div>
+
+            {{-- EMAIL-SIGN --}}
             <div class="input-field">
               <i class="fas fa-envelope"></i>
               {{-- Beri name sesuai jenis input agar dikenal Controller register/login --}}
-              <input type="email" name="email" placeholder="Email" />
+              <input type="email" name="email" value="{{ old('email') }}" placeholder="Email" />
             </div>
+
+            {{-- PASS-SIGN --}}
             <div class="input-field">
               <i class="fas fa-lock"></i>
               {{-- Beri name sesuai jenis input agar dikenal Controller register/login --}}
               {{-- Beri name sesuai jenis input agar dikenal Controller register/login --}}
-              <input type="password" name="password" placeholder="Password" />
+              <input type="password" name="password" value="{{ old('password') }}"  placeholder="Password" />
             </div>
-            <input type="submit" class="btn" value="Sign up" />
+            <input type="submit" id="btn" value="Signup" class="btn"/>
+
             <p class="social-text">Or Sign up with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">

@@ -60,6 +60,60 @@ form {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
 }
+/* BATAS */
+
+.input-field {
+  position: relative;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
+.input-field input[type="text"], 
+.input-field input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+
+
+.input-field .error-message {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  font-size: 14px;
+  color: #ff0000;
+}
+
+.input-field.error {
+  border: 2px solid red;
+}
+
+
+.error-message {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  font-size: 14px;
+  color: #ff0000;
+}
+
+.input-field.error input[type="text"],
+.input-field.error input[type="password"] {
+  
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  10%, 90% { transform: translateX(-10px); }
+  30%, 70% { transform: translateX(10px); }
+  50% { transform: translateX(0); }
+}
+
+
+
+/* BATAS */
 
 form.sign-up-form {
   opacity: 0;
@@ -158,7 +212,7 @@ form.sign-in-form {
 }
 
 #btn:hover {
-  background-color: #F3E0B5;
+  background-color: #ae8c3d;
 }
 .panels-container {
   position: absolute;
