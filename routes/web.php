@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdviceController;
 use App\Http\Controllers\AuthController;
+use app\Models\Advice;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,9 +27,11 @@ Route::get('/home', function () {
     return view('indexcov');
 })->name('home');
 
+// Pulau return view
 Route::get('/home/pulau', function () {
     return view('pulau');
-})->name('home.pulau');
+})->name('home.pulau'); 
+
 
 // Login Route
 Route::controller(AuthController::class)->group(function () {
@@ -36,7 +39,30 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('/login', 'loginPost')->name('login.post');
     Route::get('/logout', 'logout')->name('logout'); 
 });
-
-// Saran Route
-Route::get('/saran', [AdviceController::class, 'index'])->name('saran.index');
+// Get advice from database route
+// Route::get('/home/pulau', [AdviceController::class, 'index'])->name('home.saran');
+// Read Saran
+Route::get('/saran/history', [AdviceController::class, 'history'])->name('saran.history');
+// Create Saran
 Route::post('/saran', [AdviceController::class, 'store'])->name('saran.store');
+// Update Saran
+Route::get('/update-advice', function () {
+    $advices = App\Models\Advice::all();
+    return view('advice.update', compact('advices'));
+})->name('update-advice');
+// Form update saran
+Route::get('/form-advice/{id}/{name}/{email}/{advice}', function () {
+    $advice = App\Models\Advice::all();
+    return view('advice.updateform', compact('advice'));
+})->name('form-advice');
+
+// controller edit function
+Route::get('/advices/{id}/edit', [AdviceController::class, 'update'])->name('advices.update');
+
+// Delete Saran
+Route::delete('/advices/{id}', [AdviceController::class, 'destroy'])->name('advices.destroy');
+
+// Route to saran.blade.php
+Route::get('/saran-template', function () {
+    return view('saran');
+})->name('saran');

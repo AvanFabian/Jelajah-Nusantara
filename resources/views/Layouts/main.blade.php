@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield ('title')</title>
     {{-- Css --}}
@@ -31,6 +32,13 @@
         <link rel="stylesheet" href="{{ url('css/mainContent.css') }}">
         <link rel="prefetch" href="{{ url('css/explore.css') }}">
         <link rel="prefetch" href="{{ url('css/mainContent.css') }}">
+    @elseif(isset($isPulau))
+        {{-- Jika halaman Pulau maka load kode dibawah --}}
+            <link rel="stylesheet" href="{{ url('css/pulau.css') }}">
+            <link rel="stylesheet" href="{{ url('css/mainContent.css') }}">
+            <link rel="prefetch" href="{{ url('css/pulau.css') }}">
+            <link rel="prefetch" href="{{ url('css/mainContent.css') }}">
+
     @else
       {{-- Jika halaman lainnya maka load kode dibawah --}}
         <link rel="stylesheet" href="{{ url('css/mainContent.css') }}">
@@ -100,12 +108,9 @@
         {{-- EndFooter --}}
     </div>
     {{-- Script Start --}}
-    @if (!isset($isCover))
-        {{-- Jika bukan halaman Cover maka jangan load kode dibawah --}}
-    @endif {{-- Akhiri pengecekan halaman Cover --}}
+    <script src="{{ url('jquery/jquery.min.js') }}"></script>
+    <script src="{{ url('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     @yield('scripts')
-    <script defer src="{{ url('jquery/jquery.min.js') }}"></script>
-    <script defer src="{{ url('bootstrap/js/bootstrap.min.js') }}"></script>
     {{-- Script End --}}
 </body>
 

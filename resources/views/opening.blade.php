@@ -1026,7 +1026,7 @@
   <!-- 
     - custom js link
   -->
-  {{-- <script src="{{ url("/js/perkenalan.js") }}"></script> --}}
+  {{-- <script src="{{ asset("js/perkenalan.js") }}"></script> --}}
 
   <!-- 
     - ionicon link
