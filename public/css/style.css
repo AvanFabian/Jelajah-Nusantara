@@ -19,7 +19,7 @@
     /**
      * colors
      */
-/*   
+  
     --prussian-blue: hsla(217, 33%, 17%, 1);
     --oxford-blue-2: hsla(222, 47%, 11%, 1);
     --oxford-blue: hsla(221, 33%, 15%, 1);
@@ -39,12 +39,12 @@
     --electric-indigo: hsla(263, 70%, 50%, 1);
     --maximum-red: hsla(0, 72%, 51%, 1);
     --black: hsla(0, 0%, 0%, 1);
-    --gunmetal: hsla(215, 28%, 17%, 1); */
+    --gunmetal: hsla(215, 28%, 17%, 1);
     
     --prussian-blue: #341d08;
     --oxford-blue-2: #1f1204;
     --oxford-blue: #1f1204;
-    --blue-violet: #A4907C;
+    --blue-violet: #755330;
     --blue-violet_a5: #684c38;
     --blue-violet_a10: #5b4b41;
     --alice-blue: #EDF1D6;
@@ -59,7 +59,7 @@
     --cadet-grey: hsla(215, 20%, 65%, 1);
     --electric-indigo: hsla(263, 70%, 50%, 1);
     --maximum-red: hsla(0, 72%, 51%, 1);
-    --black: hsla(0, 0%, 0%, 1);
+    --black: #1f1204;
     --gunmetal: hsla(215, 28%, 17%, 1);
   
     /**
@@ -128,6 +128,7 @@
   
   }
   
+
   
   
   
@@ -416,6 +417,17 @@
   /*-----------------------------------*\
     #HERO
   \*-----------------------------------*/
+  
+  .section.hero {
+    background-image: url('mapind.jpg');
+    background-repeat: no-repeat;
+    background: url('img/mapind.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    /* properti lainnya */
+  }
+ 
   
   .hero {
     position: relative;
