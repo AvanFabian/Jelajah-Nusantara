@@ -82,18 +82,18 @@
         - #HERO
       -->
 
-      <section class="section hero" aria-label="home">
-        <div class="container">
+      <section class="section hero" aria-label="home" style="background-image: url('img/mapind.jpg');" >
+        <div class="container" style="margin-">
 
           <h1 class="headline-lg hero-title">
-           Jelajah Alam Nusantara <span class="span"> <br> JENTARA</span>
+           Jelajah Alam Nusantara <span class="span" style="font-size: 2em;"> <br> JENTARA</span>
           </h1>
 
-          <p class="section-text body-lg">
+          <p class="section-text body-lg" style="text-decoration-color: #F5E8C7">
             Kesempatanmu untuk mengungkap misteri dan keajaiban Nusantara yang belum pernah kamu lihat. Siapkah kamu untuk menjelajah dengan kami?
           </p>
 
-          <a href="{{ route('home') }}" class="btn">Explore now</a>
+          <a href="{{ route('home') }}" class="btn" style="background-color: #d3a27f;">Explore now</a>
 
         </div>
       </section>
@@ -109,7 +109,7 @@
       <section class="section top-collection" aria-labelledby="collection-label" id="content">
         <div class="container">
 
-          <div class="title-wrapper">
+          <div class="container">
             <h2 class="headline-md section-title text-center" id="collection-label">Top Konten</h2>
           </div>
 
