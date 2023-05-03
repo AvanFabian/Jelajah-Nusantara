@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('advices', function (Blueprint $table) {
             $table->id()->unique();
-            // name, email , advice
+            // name, email , advice, subject
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('subject');
             $table->string('advice');
             $table->timestamps();
         });

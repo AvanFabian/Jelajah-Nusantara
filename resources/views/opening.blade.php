@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <!--- custom css and js link -->
-  <link rel="stylesheet" href="{{ url('css/style.css') }}">
+  <link rel="stylesheet" href="{{ url('css/opening.css') }}">
   <script src="{{ url('js/perkenalan.js') }}"></script>
 </head>
 

@@ -13,6 +13,7 @@ class AdviceController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
             'email' => 'required|email',
+            'subject' => 'required',
             'advice' => 'required',
         ]);
 
@@ -30,21 +31,24 @@ class AdviceController extends Controller
     // Show all advice
     public function history()
     {
-        $history = Advice::select('name', 'advice', 'created_at')->orderBy('created_at', 'desc')->get();
+        $history = Advice::select('name', 'advice', 'subject', 'created_at')->orderBy('created_at', 'desc')->get();
         return view('advice.history', compact('history'));
     }
 
-    public function edit($id)
-    {
-        $advices = Advice::findOrFail($id);
-        // redirect to edit page with the data
-        return redirect()->route('update-advice', compact('advices'));
-    }
+    // public function edit($id)
+    // {
+    //     $advices = Advice::findOrFail($id);
+    //     // redirect to edit page with the data
+    //     return redirect()->route('update-advice', compact('advices'));
+    // }
     
 
     public function update(Request $request, $id)
     {
         $advice = Advice::find($id);
+        $advice->name = $request->input('name');
+        $advice->email = $request->input('email');
+        $advice->subject = $request->input('subject');
         $advice->advice = $request->input('advice');
         $advice->save();
         return redirect('/home/pulau')->with('success', 'Advice updated successfully');

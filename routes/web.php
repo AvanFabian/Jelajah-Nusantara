@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Requests;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdviceController;
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use app\Models\Advice;
 
 /*
@@ -20,30 +21,40 @@ use app\Models\Advice;
 
 // Begining Route
 Route::get('/', function () {
-    return view('opening');
+    return view('indexcov');
 });
 
-// Konten Route
+// Register Route
+Route::view('/register', 'login.register');
+Route::post('/registerSend', [RegisterController::class, 'register'])->name('registerPost');
+// Login Route
+Route::view('/login', 'login.login');
+Route::post('/loginSend', [LoginController::class, 'authenticate'])->name('loginPost');
+// Logout Route
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout'); 
+
+// Indexcov Route
 Route::get('/home', function () {
     return view('indexcov');
-})->name('home');
+});
 
-// Pulau return view
+// Pulau Route
 Route::get('/home/pulau', function () {
     return view('pulau');
 })->name('home.pulau'); 
 
+// Explore konten Route
+Route::get('/home/explore', function () {
+    return view('explore3');
+})->name('home.explore');
 
-// Login Route
-Route::controller(AuthController::class)->group(function () {
-    Route::get('/login', 'login')->name('login');
-    Route::post('/login', 'loginPost')->name('login.post');
-    Route::get('/logout', 'logout')->name('logout'); 
-});
-// Get advice from database route
-// Route::get('/home/pulau', [AdviceController::class, 'index'])->name('home.saran');
+// JentTeam Route
+Route::get('/home/our-team', function () {
+    return view('jentTeam');
+})->name('home.jentteam');
+
 // Read Saran
-Route::get('/saran/history', [AdviceController::class, 'history'])->name('saran.history');
+// Route::get('/saran/history', [AdviceController::class, 'history'])->name('saran.history');
 // Create Saran
 Route::post('/saran', [AdviceController::class, 'store'])->name('saran.store');
 // Halaman Update Saran
@@ -52,10 +63,10 @@ Route::get('/update-advice', function () {
     return view('advice.update', compact('advices'));
 })->name('update-advice');
 // Form update saran
-Route::get('/form-advice/{id}', function ($id) {
-    $advice = App\Models\Advice::all();
-    return view('advice.updateform', compact('advice', 'id'));
-})->name('form-advice');
+// Route::get('/form-advice/{id}', function ($id) {
+//     $advice = App\Models\Advice::all();
+//     return view('advice.updateform', compact('advice', 'id'));
+// })->name('form-advice');
 // Function update saran
 Route::put('/update-advice/{id}', [AdviceController::class, 'update'])->name('update-advice-function');
 

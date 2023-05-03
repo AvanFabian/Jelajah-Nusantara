@@ -21,13 +21,10 @@ input {
   }
   
 
-/* .container {
-  position: relative;
+.container {
   width: 100%;
   background-color: #fff;
-  min-height: 100vh;
-  overflow: hidden;
-} */
+}
 
 .forms-container {
   position: absolute;
@@ -68,9 +65,8 @@ form {
   border: 1px solid #ccc;
 }
 
-.input-field input[type="text"], 
+.input-field input[type="text"], .input-field input[type="email"],
 .input-field input[type="password"] {
-  width: 100%;
   padding: 10px;
   border-radius: 4px;
 }
@@ -210,7 +206,11 @@ form.sign-in-form {
   cursor: pointer;
   transition: 0.5s;
 }
-
+/* HACK ROW BOOTSTRAP */
+.row {
+  display: block !important;
+}
+/* HACK ROW */
 #btn:hover {
   background-color: #ae8c3d;
 }

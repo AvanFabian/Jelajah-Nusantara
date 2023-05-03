@@ -15,6 +15,7 @@ class Advice extends Model
         'id',
         'name',
         'email',
+        'subject',
         'advice',
     ];
 }

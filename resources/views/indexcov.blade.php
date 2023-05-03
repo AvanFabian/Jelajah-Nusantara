@@ -1,6 +1,21 @@
 @extends('Layouts.main', ['isCover' => true])
 
+@section('title', 'Bersiap Menjelajah')
+
+<link rel="preload" href="{{ url('img/oke.mp4') }}" as="video" type="video/mp4" crossorigin="anonymous" preload="metadata">
+<link rel="stylesheet" href="{{ url('css/cover.css') }}">
+
 @section('content')
+
+{{-- Additional Page Style --}}
+   <style>
+      .text-custom {
+         text-decoration: none;
+         color: #3b3432;
+      }
+   </style>
+{{-- End Additional Page Style --}}
+
    <div class="cover">
       <!-- TITLE -->
       <div class="wrapper">
@@ -24,38 +39,27 @@
                <br />
                <div class="row mt-3">
                   <div class="col-12">
-                     <button type="button"><a class="text-custom" href="{{ route('login') }}">Sign Up</a></button>
+                     <button type="button"><a class="text-custom" href="/register">SignUp</a></button>
                   </div>
                </div>
-                <div class="row mt-4">
-                    <div class="col-12">
-                      {{-- <button type="button"><a class="text-custom" href="{{ route('login') }}">Sign In</a></button> --}}
-                      <button type="button"><a class="text-custom" href="/home/pulau">Sign In</a></button>
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-12">
-                      <button type="button"><a class="text-custom" href="/home/pulau"
-                            id="island-btn">Visitor</a></button>
-                    </div>
-                </div>
+               <div class="row mt-4">
+                  <div class="col-12">
+                     <button type="button"><a class="text-custom" href="/login">SignIn</a></button>
+                  </div>
+               </div>
+               <div class="row mt-4">
+                  <div class="col-12">
+                     <button type="button"><a class="text-custom" href="/home/pulau" id="island-btn">Visitor</a></button>
+                  </div>
+               </div>
          </div>
       </div>
    </div>
-@section('scripts')
-   <script defer>
-      function toggle() {
-         var blur = document.getElementById("blur");
-         blur.classList.toggle("active");
-         var popup = document.getElementById("popup");
-         popup.classList.toggle("active");
-      }
-   </script>
-   <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   <script defer src="{{ url('js/script.js') }}"></script>
-   <script defer
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="{{ url('js/script.js') }}"></script>
+   <script
      type="module"
      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
     ></script>
-   <script defer nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 @endsection
