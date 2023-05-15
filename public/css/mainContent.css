@@ -8,6 +8,7 @@ body {
 	flex-direction: column; /* Make sure body fills available height and stays at least 100% high.*/
 
 }
+
 .page-content {
 	min-height: 100vh;
 	display: flex;
@@ -112,6 +113,9 @@ ul.navbar-nav li {
 }
 .team .card-body i {
 	font-size: 20px;
+}
+#footerMain {
+z-index: 9999;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 	.carousel-caption {

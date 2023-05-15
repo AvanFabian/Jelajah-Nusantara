@@ -2,20 +2,19 @@
 
 @section('title', 'Beauty of Indonesia')
 
-<link rel="stylesheet" href="{{ url('css/style2.css') }}">
+<link rel="stylesheet" href="{{ url('css/preview_islands.css') }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-<link rel="preload" href="{{ url('img/sumatera.mp4') }}" as="video" type="video/mp4" crossorigin="anonymous" preload="metadata">
-<link rel="preload" href="{{ url('img/background.mp4') }}" as="video" type="video/mp4" crossorigin="anonymous" preload="metadata">
+
 
 
 @section('content')
    <section class="home">
-      <video src="{{ url('img/sumatera.mp4') }}" class="video-slide active" autoplay muted loop></video>
-      <video src="{{ url('img/background.mp4') }}" class="video-slide" autoplay muted loop></video>
-      <video src="{{ url('img/background.mp4') }}" class="video-slide" autoplay muted loop></video>
-      <video src="{{ url('img/background.mp4') }}" class="video-slide" autoplay muted loop></video>
-      <video src="{{ url('img/background.mp4') }}" class="video-slide" autoplay muted loop></video>
-      <video src="{{ url('img/background.mp4') }}" class="video-slide" autoplay muted loop></video>
+      <video src="{{ url('videos/background.mp4') }}" class="video-slide active" autoplay muted loop></video>
+      <video src="{{ url('videos/background.mp4') }}" class="video-slide" autoplay muted loop></video>
+      <video src="{{ url('videos/oke.mp4') }}" class="video-slide" autoplay muted loop></video>
+      <video src="{{ url('videos/background.mp4') }}" class="video-slide" autoplay muted loop></video>
+      <video src="{{ url('videos/sumatera.mp4') }}" class="video-slide" autoplay muted loop></video>
+      <video src="{{ url('videos/background.mp4') }}" class="video-slide" autoplay muted loop></video>
       <!-- SLIDE 1 -->
       <div class="content active">
          <h1>WONDERFUL. <br><span>SUMATERA</span></h1>
@@ -25,7 +24,7 @@
             berarti "pulau emas").
             <small><span>source by : wikipedia and </span></small>
          </p>
-         <a href="#">Read More</a>
+         <a href="{{ route('explore.detail-explore') }}">Read More</a>
       </div>
       <!-- SLIDE 2 -->
       <div class="content">
@@ -34,7 +33,7 @@
             Indonesia. Terdapat 6 provinsi dalam Pulau Jawa,
             yakni Banten, DKI Jakarta, Jawa Barat, Jawa Tengah, Daerah Istimewa Yogyakarta, dan Jawa Timur. Pulau Jawa
             dikenal sebagai salah satu daerah yang subur.</p>
-         <a href="#">Read More</a>
+         <a href="{{ route('explore.detail-explore') }}">Read More</a>
       </div>
       <!-- SLIDE 3 -->
       <div class="content">
@@ -43,7 +42,7 @@
             umumnya menyebut Kalimantan dengan nama Borneo yang berasal dari kata Brunai.
             Kesultanan Brunei yang terletak di pesisir utara dahulu pernah menguasai sebagian besar wilayah barat serta
             utara pulau Kalimantan.</p>
-         <a href="#">Read More</a>
+         <a href="{{ route('explore.detail-explore') }}">Read More</a>
       </div>
       <!-- SLIDE 4 -->
       <div class="content">
@@ -51,7 +50,7 @@
          <p>Sulawesi adalah pulau terbesar kesebelas di dunia dan meliputi area seluas 174.600 km2. Bagian tengah pulau
             ini bergunung-gunung dengan permukaan kasar sehingga semenanjung di Sulawesi
             pada dasarnya jauh satu sama lain dan lebih mudah dijangkau melalui laut daripada melalui jalan darat.</p>
-         <a href="#">Read More</a>
+         <a href="{{ route('explore.detail-explore') }}">Read More</a>
       </div>
       <!-- SLIDE 5 -->
       <div class="content">
@@ -60,7 +59,7 @@
             gunung berapi, sungai-sungai, dan danau.
             Keberadaan gunung berapi memberikan kesuburan tanah untuk usaha pertanian. Gunung berapi di Pulau Bali
             adalah Gunung Batur dan Gunung Agung.</p>
-         <a href="#">Read More</a>
+         <a href="{{ route('explore.detail-explore') }}">Read More</a>
       </div>
       <!-- SLIDE 6 -->
       <div class="content">
@@ -69,7 +68,7 @@
             Barat dari pulau Papua (juga dikenal dunia
             internasional dengan pulau New Guinea) yang merupakan pulau terbesar kedua setelah Greenland yang terletak
             di belahan Utara bumi.</p>
-         <a href="#">Read More</a>
+         <a href="{{ route('explore.detail-explore') }}">Read More</a>
       </div>
       <div class="media-icons">
          <a href="#"><i class="fab fa-facebook-f"></i></a>

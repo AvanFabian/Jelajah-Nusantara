@@ -82,7 +82,3 @@
         </div><!-- end container -->
     </section><!-- end section.team -->
 @endsection
-
-@section('scripts')
-    <!-- Add any additional scripts here -->
-@endsection

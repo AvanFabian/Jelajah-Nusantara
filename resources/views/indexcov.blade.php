@@ -5,8 +5,6 @@
 <link rel="preload" href="{{ url('img/oke.mp4') }}" as="video" type="video/mp4" crossorigin="anonymous" preload="metadata">
 <link rel="stylesheet" href="{{ url('css/cover.css') }}">
 
-@section('content')
-
 {{-- Additional Page Style --}}
    <style>
       .text-custom {
@@ -15,7 +13,7 @@
       }
    </style>
 {{-- End Additional Page Style --}}
-
+@section('content')
    <div class="cover">
       <!-- TITLE -->
       <div class="wrapper">
@@ -24,7 +22,7 @@
       <!-- COVER -->
       <div class="container" id="blur">
          <div class="banner">
-            <video autoplay muted loop src="{{ url('img/oke.mp4') }}" type="video/mp4"></video>
+            <video autoplay muted loop src="{{ url('videos/oke.mp4') }}" type="video/mp4"></video>
          </div>
          <!-- BUTTON COVER -->
          <div class="toplayer">

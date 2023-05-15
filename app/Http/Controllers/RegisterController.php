@@ -11,13 +11,14 @@ class registerController extends Controller
     // register function
     public function register(Request $request)
     {
-        // validate the input
         $request->validate([
             'username' => 'required',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:8|confirmed',
-        ]);
+            'email' => 'required|email|unique:users',
+            'password' => ['required', 'confirmed', 'min:8', 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/',
+            ],
+        ], ['password.regex' => 'The password must contain at least one uppercase letter, one lowercase letter, one number, and one symbol.',]);
 
+        
         $user = new User();
         $user->username = $request->input('username');
         $user->email = $request->input('email');
@@ -26,6 +27,6 @@ class registerController extends Controller
         $user->save();
 
         // return to login page
-        return redirect()->route('login')->with('success', 'You have successfully registered');
+        return redirect('/login')->with('success', 'You have successfully registered');
     }
 }

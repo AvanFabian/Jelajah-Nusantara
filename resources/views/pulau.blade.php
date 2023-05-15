@@ -3,10 +3,13 @@
 
 <link rel="stylesheet" href="{{ url('css/pulau.css') }}">
 <link href="{{ url('css/elemenOpening.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 @section('content')
 
-   <div class="carousel slide" data-bs-ride="carousel" id="carouselExampleIndicators" id="home">
+   <div class="carousel slide" data-bs-ride="carousel" id="carouselExampleIndicators" data-aos="zoom-in-up"
+      data-aos-offset="120" data-aos-delay="20" data-aos-duration="800" data-aos-easing="ease-in-out-cubic"
+      data-aos-mirror="true">
       <div class="carousel-indicators">
          <button aria-label="Slide 1" class="active" data-bs-slide-to="0" data-bs-target="#carouselExampleIndicators"
             type="button"></button>
@@ -87,117 +90,11 @@
       </button>
    </div>
 
-   <!-- services section Starts -->
-   {{-- <section class="services section-padding" id="services">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-12">
-               <div class="section-header text-center pb-5">
-                  <h2>Keunggulan Kami</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur<br>
-                     adipisicing elit. Non, quo.</p>
-               </div>
-            </div>
-         </div>
-         <div class="row">
-            <div class="col-12 col-md-12 col-lg-4">
-               <div class="card text-white text-center bg-dark pb-2">
-                  <div class="card-body">
-                     <h3 class="card-title mb-4">Mudah Dipahami dan Diakses</h3>
-                     <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eligendi
-                        modi temporibus alias iste. Accusantium?</p>
-                  </div>
-               </div>
-            </div>
-            <div class="col-12 col-md-12 col-lg-4">
-               <div class="card text-white text-center bg-dark pb-2">
-                  <div class="card-body">
-                     <i class="bi bi-journal"></i>
-                     <h3 class="card-title mb-4">Tim Profesional</h3>
-                     <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eligendi
-                        modi temporibus alias iste. Accusantium?</p>
-                  </div>
-               </div>
-            </div>
-            <div class="col-12 col-md-12 col-lg-4">
-               <div class="card text-white text-center bg-dark pb-2">
-                  <div class="card-body">
-                     <i class="bi bi-intersect"></i>
-                     <h3 class="card-title mb-4">Ramah untuk Anak Kecil</h3>
-                     <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eligendi
-                        modi temporibus alias iste. Accusantium?</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section> --}}
-   <!-- services section Ends -->
-   <!-- portfolio strats -->
-   {{-- <section class="portfolio section-padding" id="portfolio">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-12">
-               <div class="section-header text-center pb-5">
-                  <h2>Top Pulau</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur<br>
-                     adipisicing elit. Non, quo.</p>
-               </div>
-            </div>
-         </div>
-         <div class="row">
-            <div class="col-12 col-md-12 col-lg-4">
-               <div class="card text-light text-center bg-white pb-2">
-                  <div class="card-body text-dark">
-                     <div class="img-area mb-4"><img alt="" class="img-fluid" src="img/project-1.jpg">
-                     </div>
-                     <h3 class="card-title">Building Make</h3>
-                     <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eligendi
-                        modi temporibus alias iste. Accusantium?</p><button class="btn bg-warning text-dark">Learn
-                        More</button>
-                  </div>
-               </div>
-            </div>
-            <div class="col-12 col-md-12 col-lg-4">
-               <div class="card text-light text-center bg-white pb-2">
-                  <div class="card-body text-dark">
-                     <div class="img-area mb-4"><img alt="" class="img-fluid" src="img/project-2.jpg">
-                     </div>
-                     <h3 class="card-title">Building Make</h3>
-                     <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eligendi
-                        modi temporibus alias iste. Accusantium?</p><button class="btn bg-warning text-dark">learn
-                        More</button>
-                  </div>
-               </div>
-            </div>
-            <div class="col-12 col-md-12 col-lg-4">
-               <div class="card text-light text-center bg-white pb-2">
-                  <div class="card-body text-dark">
-                     <div class="img-area mb-4"><img alt="" class="img-fluid" src="img/project-3.jpg">
-                     </div>
-                     <h3 class="card-title">Building Make</h3>
-                     <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eligendi
-                        modi temporibus alias iste. Accusantium?</p><button class="btn bg-warning text-dark">Learn
-                        More</button>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="row justify-content-center">
-            <div class="col-12 col-md-12 col-lg-1">
-            </div>
-            <div class="col-12 col-md-12 mt-5 ms-5 col-lg-3">
-               <button class="btn bg-warning text-dark">See All Contents</button>
-            </div>
-         </div>
-      </div>
-   </section> --}}
-   <!-- portfolio ends -->
-
-   <!-- ======= Portfolio Section ======= -->
+   <!-- ======= Top Konten ======= -->
    <section id="portfolio" class="portfolio">
 
-      <div class="container" data-aos="fade-up">
+      <div class="container" data-aos="zoom-in-up" data-aos-offset="120" data-aos-delay="20" data-aos-duration="800"
+         data-aos-easing="ease-in-out-cubic" data-aos-mirror="true">
 
          <header class="section-header">
             <h2>Top Contents</h2>
@@ -260,12 +157,12 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                <div class="portfolio-wrap">
-                  <img src="{{ url('img/portfolio-4.jpg') }}" class="img-fluid" alt="">
+                  <img src="{{ url('images/portfolio-4.jpg') }}" class="img-fluid" alt="">
                   <div class="portfolio-info">
                      <h4>Card 2</h4>
                      <p>Card</p>
                      <div class="portfolio-links">
-                        <a href="{{ url('img/portfolio-4.jpg') }}" data-gallery="portfolioGallery"
+                        <a href="{{ url('images/portfolio-4.jpg') }}" data-gallery="portfolioGallery"
                            class="portfokio-lightbox" title="Card 2"><i class="bi bi-plus"></i></a>
                         <a href="" title="More Details"><i class="bi bi-link"></i></a>
                      </div>
@@ -275,12 +172,12 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                <div class="portfolio-wrap">
-                  <img src="{{ url('img/portfolio-5.jpg') }}" class="img-fluid" alt="">
+                  <img src="{{ url('images/portfolio-5.jpg') }}" class="img-fluid" alt="">
                   <div class="portfolio-info">
                      <h4>Web 2</h4>
                      <p>Web</p>
                      <div class="portfolio-links">
-                        <a href="{{ url('img/portfolio-5.jpg') }}" data-gallery="portfolioGallery"
+                        <a href="{{ url('images/portfolio-5.jpg') }}" data-gallery="portfolioGallery"
                            class="portfokio-lightbox" title="Web 2"><i class="bi bi-plus"></i></a>
                         <a href="" title="More Details"><i class="bi bi-link"></i></a>
                      </div>
@@ -290,12 +187,12 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                <div class="portfolio-wrap">
-                  <img src="{{ url('img/portfolio-6.jpg') }}" class="img-fluid" alt="">
+                  <img src="{{ url('images/portfolio-6.jpg') }}" class="img-fluid" alt="">
                   <div class="portfolio-info">
                      <h4>App 3</h4>
                      <p>App</p>
                      <div class="portfolio-links">
-                        <a href="{{ url('img/portfolio-6.jpg') }}" data-gallery="portfolioGallery"
+                        <a href="{{ url('images/portfolio-6.jpg') }}" data-gallery="portfolioGallery"
                            class="portfokio-lightbox" title="App 3"><i class="bi bi-plus"></i></a>
                         <a href="" title="More Details"><i class="bi bi-link"></i></a>
                      </div>
@@ -308,13 +205,13 @@
       </div>
 
    </section>
-   <!-- End Portfolio Section -->
+   <!-- End Top Konten -->
 
    <!-- ======= Contact Section ======= -->
    <section id="contact" class="contact">
 
-      <div class="container" data-aos="fade-up">
-
+      <div class="container child" id="kontak" data-aos="zoom-out-up" data-aos-offset="300" data-aos-delay="20"
+         data-aos-duration="800" data-aos-easing="ease-in-out-quart" data-aos-mirror="true">
          <header class="section-header">
             <h2>Our Services</h2>
             <p>Give us feedback and suggestions</p>
@@ -385,7 +282,8 @@
                         @if (session('success'))
                            <div class="alert alert-success alert-dismissible" role="alert">
                               {{ session('success') }}
-                              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                              <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                 aria-label="Close"></button>
                            </div>
                         @endif
 
@@ -409,7 +307,8 @@
    <section id="footer" class="footer">
 
       <div class="footer-newsletter">
-         <div class="container">
+         <div class="container" id="footer-news" data-aos="fade-right" data-aos-offset="300" data-aos-delay="20"
+            data-aos-duration="800" data-aos-easing="ease-in-out-quart" data-aos-mirror="true">
             <div class="row justify-content-center">
                <div class="col-lg-12 text-center">
                   <h4>Our Newsletter</h4>
@@ -425,7 +324,8 @@
       </div>
 
       <div class="footer-top">
-         <div class="container">
+         <div class="container" data-aos="fade-left" data-aos-offset="300" data-aos-delay="20" data-aos-duration="800"
+            data-aos-easing="ease-in-out-quart" data-aos-mirror="true">
             <div class="row gy-4">
                <div class="col-lg-5 col-md-12 footer-info">
                   <a href="/pulau" class="logo d-flex align-items-center">
@@ -470,40 +370,9 @@
       </div>
    </section><!-- End Footer -->
 
-   {{-- Advice Start --}}
-   {{-- <section class="advice">
-      <div class="container m-auto pt-5">
-         <h3>Leave us some advice</h3>
-         <form action="{{ route('saran.store') }}" method="POST">
-            @csrf
-            <div class="mb-3">
-               <label for="name" class="form-label">Name</label>
-               <input type="text" class="form-control" id="name" name="name" required>
-            </div>
-            <div class="mb-3">
-               <label for="email" class="form-label">Email</label>
-               <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            <div class="mb-3">
-               <label for="advice" class="form-label">Advice</label>
-               <textarea class="form-control" id="advice" name="advice" rows="3" required></textarea>
-            </div>
-            @if (session('success'))
-               <div class="alert alert-success" role="alert">
-                  {{ session('success') }}
-               </div>
-            @endif
-            <button type="submit" id="submit-advice" class="btn btn-primary">Submit</button>
-            <button type="button" id="history-advice" class="btn btn-success" data-bs-toggle="modal"
-               data-bs-target="#historyModal">History</button>
-            <a href="{{ route('update-advice') }}" class="btn btn-primary">Update & Delete Advice</a>
-
-
-            <!-- Modal -->
-            <div id="historyModalContainer">
-            </div>
-         </form>
-      </div>
-   </section> --}}
-   {{-- Advice end --}}
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+   <script>
+      AOS.init();
+   </script>
 @endsection

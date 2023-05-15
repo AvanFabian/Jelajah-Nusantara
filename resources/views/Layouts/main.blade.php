@@ -25,72 +25,80 @@
 
 <body>
    @if (!isset($isCover) && !isset($isRegister) && !isset($isExplore2))
-   <div class="page-content">
       {{-- Navbar --}}
-         {{-- Jika bukan halaman Cover maka jangan load kode dibawah --}}
-         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <div class="container d-flex justify-content-between">
-               <a class="navbar-brand" href="#"><span class="text-danger">Jelajah</span>Nusantara</a> <button
-                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                  class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse"
-                  type="button"><span class="navbar-toggler-icon"></span></button>
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Top Contents</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/home/explore">Explore</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">FeedBack</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/home/our-team"><i class="fa fa-user-o"></i>Our Team</a>
-                     </li>
-                  </ul>
-               </div>
+      {{-- Jika bukan halaman Cover maka jangan load kode dibawah --}}
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+         <div class="container d-flex justify-content-between">
+            <a class="navbar-brand" href="#"><span class="text-danger">Jelajah</span>Nusantara</a> <button
+               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+               class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse"
+               type="button"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#portfolio">Top Contents</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="/home/explore">Explore</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#contact">FeedBack</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="/home/our-team"><i class="fa fa-user-o"></i>Our Team</a>
+                  </li>
+               </ul>
             </div>
-         </nav>
-      @endif {{-- Akhiri pengecekan halaman Cover --}}
-      {{-- EndNavbar --}}
-      {{-- ContentStart --}}
-      @if (isset($isExplore2) || isset($isRegister))
-         @yield('content')
-      @else
-         <div class="main-content">
-            @yield('content')
-            <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-                  class="bi bi-arrow-up-short"></i></a>
+            <div class="dropdown">
+               <a href="#" class="dropdown-toggle"  data-bs-toggle="dropdown"
+               aria-expanded="false">
+                  <img src="{{ url('images/default-user2.png') }}" alt="user">
+               </a>
+               <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/login">Switch Account</a></li>
+                  <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}">Admin Dashboard</a></li>
+                  <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
+               </ul>
+            </div>
          </div>
-      @endif
-      {{-- EndContent --}}
-      {{-- Footer --}}
-      @if (!isset($isCover) && !isset($isRegister) && !isset($isExplore2))
-         {{-- Jika bukan halaman Cover maka jangan load kode dibawah --}}
-         <footer class="bg-dark p-2 text-center page-footer">
-            <div class="container">
-               <p class="body-md text-center text-white copyright">
-                  &copy; 2023 Jentara. Developed with <span class="span">❤</span> by JentTeam.
-               </p>
-            </div>
-         </footer>
-      @endif {{-- Akhiri pengecekan halaman Cover --}}
-      {{-- EndFooter --}}
+      </nav>
+   @endif {{-- Akhiri pengecekan halaman Cover --}}
+   {{-- EndNavbar --}}
+   {{-- ContentStart --}}
+   @if (isset($isExplore2) || isset($isRegister) || isset($isPulau))
+      @yield('content')
+   @else
+      <div class="main-content">
+         @yield('content')
+         <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+               class="bi bi-arrow-up-short"></i></a>
+      </div>
+   @endif
+   {{-- EndContent --}}
+   {{-- Footer --}}
+   @if (!isset($isCover) && !isset($isRegister) && !isset($isExplore2))
+      {{-- Jika bukan halaman Cover maka jangan load kode dibawah --}}
+      <footer class="bg-dark p-2 text-center page-footer" id="footerMain">
+         <div class="container">
+            <p class="body-md text-center text-light copyright">
+               &copy; 2023 Jentara. Developed with <span class="span">❤</span> by JentTeam.
+            </p>
+         </div>
+      </footer>
+   @endif {{-- Akhiri pengecekan halaman Cover --}}
+   {{-- EndFooter --}}
    </div>
    {{-- Script Start --}}
-   @if (isset($isPulau))
-      {{-- Jika halaman Cover maka load kode dibawah --}}
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script src="{{ url('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-      <script src="{{ url('js/elemenOpening.js') }}"></script>
-   @endif
-   {{-- <script src="{{ url('js/Jquery.js') }}"></script> --}}
+   {{-- Jika halaman Cover maka load kode dibawah --}}
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    <script src="{{ url('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+   <script src="{{ url('js/elemenOpening.js') }}"></script>
+
+   {{-- <script src="{{ url('js/Jquery.js') }}"></script> --}}
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    {{-- @yield('scripts') --}}
    {{-- Script End --}}
 </body>
