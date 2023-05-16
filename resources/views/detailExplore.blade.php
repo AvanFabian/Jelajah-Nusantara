@@ -6,7 +6,6 @@
    <div class="text-center mt-5 mb-5">
       <h2>WONDERFUL ...</h2>
    </div>
-   
    <section class="team section-padding" id="pulau">
       <! -- Start section tarian -->
          <div class="container">

@@ -1,4 +1,30 @@
-.section {
-    display: none; /* Initially hide the sections */
- }
+.swiper-container {
+    width: 100%;
+    height: 400px;
+  }
+  
+  .swiper-slide {
+    width: 33.33%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+  
+  .swiper-button-next,
+  .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    height: auto;
+    margin-top: -20px;
+    z-index: 10;
+    cursor: pointer;
+  }
+  
+  .swiper-button-next {
+    right: 0;
+  }
+  
+  .swiper-button-prev {
+    left: 0;
+  }
  
