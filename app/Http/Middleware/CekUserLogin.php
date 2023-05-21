@@ -17,16 +17,13 @@ class CekUserLogin
     public function handle(Request $request, Closure $next): Response
     {
         // Cek apakah user sudah login / ada session yang aktif
-        if (Auth::check()) {
-            $verSession = $request->session()->get('verified');
-            if($verSession){
-                return $next($request);
-            }
-            else{
-                return redirect('/login')->with('hakAksesAdmin', 'Login terlebih dahulu untuk mengakses halaman ini');
-            }
+        if (Auth::check() && (Auth::user()->role === 'user' || Auth::user()->role === 'admin' || Auth::user()->role === 'superadmin')) {
+            // return redirect('/login')->with('hakAksesAdmin', 'Anda tidak memiliki akses ke halaman tersebut');
+            return $next($request);
         }
-
-        return redirect('/login')->with('hakAksesAdmin', 'Anda tidak memiliki akses ke halaman tersebut');
+        
+        else{
+            return redirect('/login')->with('hakAksesAdmin', 'Login terlebih dahulu untuk mengakses halaman ini');
+        }
     }
 }

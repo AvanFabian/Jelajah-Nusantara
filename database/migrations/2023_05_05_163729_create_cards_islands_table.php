@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('CardsIslands', function (Blueprint $table) {
             $table->id();
-            $table->string('jenisKonten');
+            $table->string('pulau');
+            $table->string('contents');
+            $table->string('thumbnailLink');
             $table->string('ytLink');
-            $table->string('title');
-            $table->string('description', 1000);
             $table->timestamps();
         });
     }

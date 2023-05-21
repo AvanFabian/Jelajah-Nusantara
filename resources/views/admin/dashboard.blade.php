@@ -1,7 +1,7 @@
 @extends('admin.layout.layout')
 @section('title', 'Dashboard')
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <link rel="stylesheet" href="{{ url('bootstrap/css/bootstrap.min.css') }}">
-
 @section('content')
    <!-- Content Wrapper. Contains page content -->
    <div class="content-wrapper">
@@ -26,52 +26,17 @@
                      <!-- /.card-header -->
                      <div class="card-body p-0 mb-3">
                         <div class="table-responsive">
-                           <table class="table m-0">
+                           <table id="usersTable" class="table m-0">
                               <thead>
                                  <tr>
                                     <th>User Id</th>
                                     <th>Nama</th>
                                     <th>Role Status</th>
                                     <th>Email</th>
-                                    <th>Authorize to Admin</th>
-                                    <th>Unauthorize to User</th>
+                                    <th>Promote or Demote</th>
                                  </tr>
                               </thead>
-                              <tbody>
-                                 @foreach ($Users as $user)
-                                    <tr>
-                                       <td>{{ $user->id }}</td>
-                                       <td>{{ $user->username }}</td>
-                                       <td>{{ $user->role }}</td>
-                                       <td>{{ $user->email }}</td>
-                                       {{-- if role == superadmin disable button, if admin enable button  --}}
-                                       <td>
-                                          @if ($user->role == 'superadmin')
-                                             <button type="button" class="btn btn-outline-secondary" disabled>
-                                                <i class="fas fa-user-shield"></i>
-                                             </button>
-                                          @else
-                                             <a href="{{ route('admin.authorizeAdmin', $user->id) }}"
-                                                class="btn btn-outline-secondary">
-                                                <i class="fas fa-user-shield"></i>
-                                             </a>
-                                          @endif
-                                       </td>
-                                       {{-- if role == user disable button, if admin enable button  --}}
-                                       <td>
-                                          @if ($user->role == 'superadmin')
-                                          <button type="button" class="btn btn-outline-secondary" disabled>
-                                             <i class="fas fa-user-shield"></i>
-                                          </button>
-                                          @else
-                                          <a href="{{ route('admin.unauthorizeAdmin', $user->id) }}"
-                                             class="btn btn-outline-secondary">
-                                             <i class="fas fa-user-shield"></i>
-                                          </a>
-                                          @endif
-                                    </tr>
-                                 @endforeach
-                              </tbody>
+                              <tbody></tbody>
                            </table>
                         </div>
                         <!-- /.table-responsive -->
@@ -81,13 +46,29 @@
                <!-- /.col -->
             </div>
             <!-- /.row -->
+            <div class="row">
+               <div class="col-md-12">
+                  {{-- Success variable message alert  --}}
+                  @if (session('authorized'))
+                     <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('authorized') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                     </div>
+                  @elseif(session('unauthorized'))
+                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ session('unauthorized') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                     </div>
+                  @endif
+               </div>
+            </div>
             {{-- End Admin Auth --}}
             {{-- Start content displaying --}}
             <div class="row justify-content-center">
                <div class="col-md-12">
                   <div class="card">
                      <div class="card-header border-transparent">
-                        <h3 class="card-title">Contents List</h3>
+                        <h3 class="card-title">List Konten </h3>
                         <div class="card-tools">
                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
                               <i class="fas fa-minus"></i>
@@ -104,18 +85,16 @@
                               <thead>
                                  <tr>
                                     <th>ID</th>
+                                    <th>Pulau</th>
                                     <th>Youtube Link</th>
-                                    <th>Title</th>
-                                    <th>Description</th>
                                  </tr>
                               </thead>
                               <tbody>
                                  @foreach ($Contents as $content)
                                     <tr>
                                        <td>{{ $content->id }}</td>
+                                       <td>{{ $content->pulau }}</td>
                                        <td>{{ $content->ytLink }}</td>
-                                       <td>{{ $content->title }}</td>
-                                       <td>{{ $content->description }}</td>
                                     </tr>
                                  @endforeach
                               </tbody>
@@ -128,7 +107,8 @@
                <!-- /.col -->
             </div>
             <!-- /.row -->
-            
+
+
             {{-- End content displaying --}}
 
             <!-- Main row -->
@@ -158,28 +138,39 @@
                                  <div class="row">
                                     <div class="col-10">
                                        <div class="mb-3">
+                                          <label for="pulau" class="form-label">Huruf Kecil Nama Pulau</label>
+                                          <input type="text" class="form-control" id="pulau" name="pulau"
+                                             required>
+                                       </div>
+                                    </div>
+                                 </div>
+
+                                 <div class="row">
+                                    <div class="col-10">
+                                       <div class="mb-3">
+                                          <label for="jenisKonten" class="form-label">Jenis Konten (Kecuali tentang)</label>
+                                          <input type="text" class="form-control" id="jenisKonten" name="jenisKonten"
+                                             required>
+                                       </div>
+                                    </div>
+                                 </div>
+
+                                 <div class="row">
+                                    <div class="col-10">
+                                       <div class="mb-3">
+                                          <label for="thumbnailLink" class="form-label">Thumbnail Image Link</label>
+                                          <input type="text" class="form-control" id="thumbnailLink" name="thumbnailLink"
+                                             required>
+                                       </div>
+                                    </div>
+                                 </div>
+
+                                 <div class="row">
+                                    <div class="col-10">
+                                       <div class="mb-3">
                                           <label for="ytLink" class="form-label">Youtube Content Link</label>
                                           <input type="text" class="form-control" id="ytLink" name="ytLink"
                                              required>
-                                       </div>
-                                    </div>
-                                 </div>
-
-                                 <div class="row">
-                                    <div class="col-10">
-                                       <div class="mb-3">
-                                          <label for="titleKonten" class="form-label">Title</label>
-                                          <input type="text" class="form-control" id="titleKonten" name="titleKonten"
-                                             required>
-                                       </div>
-                                    </div>
-                                 </div>
-
-                                 <div class="row">
-                                    <div class="col-10">
-                                       <div class="mb-3">
-                                          <label for="descriptionKonten" class="form-label">Description</label>
-                                          <textarea class="form-control" id="descriptionKonten" name="descriptionKonten" rows="5"></textarea>
                                        </div>
                                     </div>
                                  </div>
@@ -231,18 +222,17 @@
                                  <div class="row">
                                     <div class="col-10">
                                        <div class="mb-3">
-                                          <label for="contentId" class="form-label">Content ID</label>
-                                          <input type="text" class="form-control" id="contentId"
-                                             name="contentId" required>
+                                          <label for="idKonten" class="form-label">Id Konten (Delete Cukup Masukkan ID)</label>
+                                          <input type="text" class="form-control" id="idKonten" name="idKonten"
+                                             required>
                                        </div>
                                     </div>
                                  </div>
-
                                  <div class="row">
                                     <div class="col-10">
                                        <div class="mb-3">
-                                          <label for="ytLink" class="form-label">New Youtube Content Link</label>
-                                          <input type="text" class="form-control" id="ytLink" name="ytLink"
+                                          <label for="pulau" class="form-label">Huruf Kecil Nama Pulau</label>
+                                          <input type="text" class="form-control" id="pulau" name="pulau"
                                              required>
                                        </div>
                                     </div>
@@ -251,21 +241,12 @@
                                  <div class="row">
                                     <div class="col-10">
                                        <div class="mb-3">
-                                          <label for="newTitleKonten" class="form-label">New Title</label>
-                                          <input type="text" class="form-control" id="newTitleKonten"
-                                             name="newTitleKonten" required>
+                                          <label for="ytLink" class="form-label">Youtube Content Link</label>
+                                          <input type="text" class="form-control" id="ytLink" name="ytLink"
+                                             required>
                                        </div>
                                     </div>
-                                 </div>
-
-                                 <div class="row">
-                                    <div class="col-10">
-                                       <div class="mb-3">
-                                          <label for="descriptionKonten" class="form-label">New Description</label>
-                                          <textarea class="form-control" id="descriptionKonten" name="descriptionKonten" rows="5"></textarea>
-                                       </div>
-                                    </div>
-                                 </div>
+                                 </div>   
 
                                  <div class="row">
                                     <div class="col-10">
@@ -311,3 +292,12 @@
    </div>
    <!-- /.content-wrapper -->
 @endsection
+{{-- @if ($user->role == 'superadmin')
+<button type="button" class="btn btn-outline-secondary" disabled>
+   <i class="fas fa-user-shield"></i>
+</button>
+@else
+   <button class="btn btn-outline-secondary">
+      <i class="fas fa-user-shield"></i>
+   </button>
+@endif --}}

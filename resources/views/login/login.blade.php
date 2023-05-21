@@ -38,19 +38,19 @@
                      Remember me
                   </label>
                </div>
+               @if (session('hakAksesAdmin'))
+               <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  {{ session('hakAksesAdmin') }}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert"
+                  aria-label="Close"></button>
+               </div>
+               @endif
                <div class="row mb-2">
                   <div class="col-md-6 mt-4">
-                     <a href="{{ route('forgotPassword') }}" type="Forgot" id="Forgot" class="forgotPass"
+                     <a href="{{ route('password.request') }}" type="Forgot" id="Forgot" class="forgotPass"
                      name="Forgot">Change Password?</a>
                   </div>
                   <div class="col-md-6">
-                     @if (session('hakAksesAdmin'))
-                     <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{ session('hakAksesAdmin') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert"
-                        aria-label="Close"></button>
-                     </div>
-                     @endif
                      <input type="submit" id="submit" class="btn btn-outline-dark btn-lg px-5 mt-3" name="submit"
                   value="Submit">
                   </div>
@@ -92,9 +92,9 @@
          </div>
       </div>
    </div>
-   <script defer src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-   <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   <script defer src="{{ url('js/loginValid.js') }}"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="{{ url('js/loginValid.js') }}"></script>
+   <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
    <script>
       AOS.init();

@@ -297,7 +297,7 @@ h6 {
 .contact .info-box {
   color: #444444;
   background: #fafbff;
-  padding: 30px;
+  padding: 35px;
 }
 
 .contact .info-box i {
@@ -311,6 +311,18 @@ h6 {
   color: #012970;
   font-weight: 700;
   margin: 20px 0 10px 0;
+}
+
+.contact .info-box .h3qr {
+  font-size: 20px;
+  color: #012970;
+  font-weight: 700;
+  margin: -20px auto 10px auto;
+}
+
+#qrcode img {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact .info-box p {

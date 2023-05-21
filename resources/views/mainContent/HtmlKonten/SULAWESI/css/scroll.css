@@ -1,0 +1,32 @@
+/* blink based browser */
+
+html::-webkit-scrollbar {
+    width: 1.30vw;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: #f00;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background-color: #f00;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: #656565;
+}
+
+html::-webkit-scrollbar-track:hover {
+    background-color: #656565;
+}
+
+/* blink based browser */
+
+/* geckeo based browser */
+
+html {
+    scrollbar-width: bold;
+    scrollbar-color: #f00 #656565;
+}
+
+/* geckeo based browser */

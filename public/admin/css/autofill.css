@@ -1,0 +1,33 @@
+input:-webkit-autofill {
+    background-color: #242222;
+    border: 3px solid #242222;
+  }
+  
+  input:autofill {
+    background-color: #242222;
+    border: 3px solid #242222;
+  }
+  
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff;
+    -webkit-box-shadow: 0 0 0px 40rem #242222 inset;
+  }
+
+  .hover-effect {
+    position: relative;
+  }
+  
+  .hover-effect:hover::before {
+    content: "Go to Other Page";
+    position: absolute;
+    top: 30px; /* Adjust the vertical position of the text */
+    left: 20%; /* Adjust the horizontal position of the text */
+    padding: 8px;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  

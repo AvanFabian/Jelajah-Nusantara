@@ -55,21 +55,6 @@ class loginController extends Controller
         ])->onlyInput('email');
     }
 
-    public function forgotPassword(Request $request): RedirectResponse
-    {
-        $credentials = $request->validate([
-            'email' => ['required', 'email'],
-        ]);
-
-        $user = User::where('email', $credentials['email'])->first();
-
-        if ($user) {
-            $user->sendPasswordResetNotification($user->createToken('password reset')->plainTextToken);
-        }
-
-        return back()->with('success', 'Password reset link sent!');
-    }
-
     public function logout(Request $request): RedirectResponse
     {
         Auth::logout();

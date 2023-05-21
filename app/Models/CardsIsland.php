@@ -9,10 +9,11 @@ class CardsIsland extends Model
 {
     use HasFactory;
 
-    protected $table = 'CardsIslands';
+    protected $table = 'cardsislands';
     protected $fillable = [
+        'pulau',
+        'contents',
+        'thumbnailLink',
         'ytLink',
-        'titleKonten',
-        'descriptionKonten',
     ];
 }

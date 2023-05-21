@@ -12,62 +12,37 @@
             @csrf
             <h2 class="title">Sign up</h2>
             {{-- NAME-SIGN --}}
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="input-field">
-                     <i class="fas fa-envelope"></i>
-                     {{-- Beri name sesuai jenis input agar dikenal Controller register/login --}}
-                     <input type="text" id="username" name="username" value="{{ old('username') }}"
-                        placeholder="Username" required />
-                  </div>
-               </div>
+            <div class="input-field">
+               <i class="fas fa-envelope"></i>
+               {{-- Beri name sesuai jenis input agar dikenal Controller register/login --}}
+               <input type="text" id="username" name="username" value="{{ old('username') }}" placeholder="Username"
+                  required />
             </div>
+
             {{-- EMAIL-SIGN --}}
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="input-field mt-3">
-                     <i class="fas fa-envelope"></i>
-                     {{-- Beri name sesuai jenis input agar dikenal Controller register/login --}}
-                     <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="Email"
-                        required />
-                  </div>
-               </div>
-               @if ($errors->has('email'))
-                  <div class="alert alert-danger">
-                     {{ $errors->first('email') }}
-                  </div>
-               @endif
+            <div class="input-field">
+               <i class="fas fa-envelope"></i>
+               {{-- Beri name sesuai jenis input agar dikenal Controller register/login --}}
+               <input type="email" id="email" class="autofilled" name="email" value="{{ old('email') }}"
+                  placeholder="Email" />
             </div>
-            {{-- PASS-SIGN --}}
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="input-field mt-3">
-                     <i class="fas fa-lock"></i>
-                     <input type="password" id="password" name="password" placeholder="Password" required />
-                     <a href="#" id="showPass"><i class="fas fa-eye"></i></a>
-                  </div>
-               </div>
+
+            {{-- PASSWORD --}}
+            <div class="input-field @error('password') error @enderror">
+               <i class="fas fa-lock"></i>
+               {{-- Beri name sesuai jenis input agar dikenal Controller register/login --}}
+               <input type="password" id="password" name="password" placeholder="Password" />
+               <a href="#" class="ms-3" id="showPass"><i class="fas fa-eye"></i></a>
+               @error('password')
+                  <span class="error-message">{{ $message }}</span>
+               @enderror
             </div>
-            @if ($errors->has('password'))
-               <div class="alert alert-danger ps-3 pe-3">
-                  @if (strpos($errors->first('password'), 'regex') !== false)
-                     Password must be at least 8 characters long and contain at least one number, one uppercase letter, and
-                     one symbol.
-                  @else
-                     {{ $errors->first('password') }}
-                  @endif
-               </div>
-            @endif
-            {{-- CONFIRM-PASS-SIGN --}}
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="input-field mt-3">
-                     <i class="fas fa-lock"></i>
-                     <input type="password" id="rpass" name="password_confirmation" placeholder="Confirm Password" />
-                  </div>
-               </div>
+            <div class="input-field">
+               <i class="fas fa-lock"></i>
+               <input type="password" id="rpass" name="password_confirmation" placeholder="Confirm Password" />
+               <a href="#" class="ms-3" id="showPass"><i class="fas fa-eye"></i></a>
             </div>
-            <input type="submit" id="btn" name="submit" value="Register">
+            <input type="submit" id="btn" name="submit" class="mt-4" value="Register">
          </form>
       </div>
 

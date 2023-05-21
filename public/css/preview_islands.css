@@ -145,13 +145,14 @@ section{
 .video-slide{
     position: absolute;
     width: 100%;
+    transition: ease 2s;
     /* clip-path: circle(0% at 0 50%); */
 }
 
 .video-slide.active{
-    clip-path: circle(150% at 0 50%);
+    /* clip-path: circle(150% at 0 50%); */
     transition: ease 2s;
-    transition-property: clip-path;
+    /* transition-property: clip-path; */
 }
 
 

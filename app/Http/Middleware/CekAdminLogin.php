@@ -19,7 +19,7 @@ class CekAdminLogin
         if (auth()->check() && (auth()->user()->role === 'superadmin' || auth()->user()->role === 'admin')) {
             return $next($request);
         } else {
-            return redirect()->route('home.pulau')->with('hakAksesAdmin', 'You are not an Administrator');
+            return redirect()->route('home.login')->with('hakAksesAdmin', 'You are not an Administrator');
         }
     }
 }

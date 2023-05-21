@@ -15,6 +15,9 @@
    <link rel="stylesheet" href="{{ url('admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
    <!-- Theme style -->
    <link rel="stylesheet" href="{{ url('admin/css/adminlte.min.css') }}">
+   {{-- Autofill dashboard --}}
+   <link rel="stylesheet" href="{{ url('admin/css/autofill.css') }}">
+   {{-- Font --}}
    {{-- Bootstrap --}}
 
 </head>
@@ -44,6 +47,9 @@
    <!-- ./wrapper -->
 
    <!-- REQUIRED SCRIPTS -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="{{ url('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+   <script src="{{ url('js/promoteAdmin.js') }}"></script>
    <!-- jQuery -->
    <script src="{{ url('admin/plugins/jquery/jquery.min.js')}}"></script>
    <!-- Bootstrap -->

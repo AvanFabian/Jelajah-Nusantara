@@ -211,7 +211,7 @@
    <section id="contact" class="contact">
 
       <div class="container child" id="kontak" data-aos="zoom-out-up" data-aos-offset="300" data-aos-delay="20"
-         data-aos-duration="800" data-aos-easing="ease-in-out-quart" data-aos-mirror="true">
+         data-aos-duration="800" data-aos-mirror="true">
          <header class="section-header">
             <h2>Our Services</h2>
             <p>Give us feedback and suggestions</p>
@@ -230,10 +230,9 @@
                      </div>
                   </div>
                   <div class="col-md-6">
-                     <div class="info-box">
-                        <i class="bi bi-telephone"></i>
-                        <h3>Call Us</h3>
-                        <p>+62 822 324 212 11<br>+62 821 556 226 22</p>
+                     <div class="info-box text-center">
+                        <h3 class="h3qr">Our website URL</h3>
+                        <div id="qrcode"></div>
                      </div>
                   </div>
                   <div class="col-md-6">
@@ -371,8 +370,11 @@
    </section><!-- End Footer -->
 
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+   <script src="{{ url('js/qrcode.js') }}"></script>
    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
    <script>
       AOS.init();
    </script>
+
 @endsection

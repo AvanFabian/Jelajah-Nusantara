@@ -82,6 +82,185 @@ html, body {
 }
 
 
+/* POP UP */
+.popup{
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw; */
+}
+#open{
+  height: 50px !important;
+  width: 180px !important;
+  color: #333;
+  font-size: 25px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  outline: none;
+  border: none;
+  box-shadow: 0 3px 5px rgba(0,0,0,.3);
+
+}/* popup */
+.model-container {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  animation: bounce-in 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
+  transform: scale(0); /* Ubah menjadi skala awal 0 */
+  transition: transform 0.5s ease; /* Tambahkan efek transisi */
+}
+
+.model-container.show-popup {
+  display: flex;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+  
+
+.model-container .model{
+  height: 500px;
+  max-width: 450px;
+  margin: 0  10px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+
+}
+.model-container .model .fa-heart{
+  font-size: 100px;
+  color: #dfa579;
+  padding-bottom: 50px;
+  margin: 10px 0;
+  text-shadow: 0 3px 5px rgba(0,0,0,.3), 
+              30px 30px 0 #ccc,
+              -30px 30px 0 #333;
+
+}
+
+.model-container .model .h3{
+  color: #333;
+  font-size: 25px;
+}
+
+.model-container .model p{
+  color: #666;
+  margin: 20px 0;
+}
+.model-container .model button{
+  height: 35px;
+  width: 150px;
+  background: #333;
+  color: #fff;
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  font-size: 17px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,.3);
+}
+
+.model-container .model button:hover{
+  opacity: .8;
+}
+
+.model-container .model .fa-times{
+  position: absolute;
+  top: 15px; right: 15px;
+  font-size: 25px;
+  cursor: pointer;
+  color: #333;
+
+}
+
+/* BTN POP UP 1 */
+/* Button styles */
+.btn-custom {
+  height: 35px;
+  width: 100%;
+  max-width: 150px;
+  background: #333;
+  color: #fff;
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  font-size: 17px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
+}
+
+.btn-custom:hover {
+  opacity: .8;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .btn-custom {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.col-6 {
+  flex-basis: 50%;
+  max-width: 50%;
+  padding: 0 10px;
+}
+
+.col-12 {
+  flex-basis: 100%;
+  max-width: 100%;
+  padding: 0 10px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-4 {
+  margin-top: 4px;
+}
+
+/*  END BUTTON POP UP 1 */
+
+/* a hover none */
+a {
+  color: inherit; /* Set the desired color for the anchor tag */
+  text-decoration: none; /* Remove the underline */
+}
+
+a:hover {
+  color: inherit; /* Set the desired color for the anchor tag on hover */
+  text-decoration: none; /* Remove the underline on hover */
+}
+
 
 /* membuat animasi fade in */
 @keyframes fadein {
