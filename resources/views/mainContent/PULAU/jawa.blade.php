@@ -75,7 +75,6 @@
       </div>
       </div>
       </div> --}}
-      <!-- END SECTION tentang -->
    </section>
 
    {{-- <section id="taritradisional">

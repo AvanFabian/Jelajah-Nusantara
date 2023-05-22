@@ -71,6 +71,5 @@
       </div>
       </div>
       </div> --}}
-      <!-- END SECTION tentang -->
    </section>
 @endsection

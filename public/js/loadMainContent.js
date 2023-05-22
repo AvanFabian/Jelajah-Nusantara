@@ -5,27 +5,27 @@ window.addEventListener('DOMContentLoaded', function() {
     console.log("currentIsland = " + currentIsland);
     if (currentIsland === 'jawa') {
         const tentangSection = document.getElementById('kontainer');
-        tentangSection.innerHTML = getHardcodedTentangContentJawa();
+        tentangSection.innerHTML = getHardcodedTentangContentJawa(currentIsland);
     }
     else if (currentIsland === 'bali') {
         const tentangSection = document.getElementById('kontainer');
-        tentangSection.innerHTML = getHardcodedTentangContentBali(); 
+        tentangSection.innerHTML = getHardcodedTentangContentBali(currentIsland); 
     }
     else if (currentIsland === 'sumatera') {
         const tentangSection = document.getElementById('kontainer');
-        tentangSection.innerHTML = getHardcodedTentangContentSumatera();   
+        tentangSection.innerHTML = getHardcodedTentangContentSumatera(currentIsland);   
     }
     else if (currentIsland === 'kalimantan') {
         const tentangSection = document.getElementById('kontainer');
-        tentangSection.innerHTML = getHardcodedTentangContentKalimantan();
+        tentangSection.innerHTML = getHardcodedTentangContentKalimantan(currentIsland);
     }
     else if (currentIsland === 'sulawesi') {
         const tentangSection = document.getElementById('kontainer');
-        tentangSection.innerHTML = getHardcodedTentangContentSulawesi();
+        tentangSection.innerHTML = getHardcodedTentangContentSulawesi(currentIsland);
     }
     else if (currentIsland === 'papua') {
         const tentangSection = document.getElementById('kontainer');
-        tentangSection.innerHTML = getHardcodedTentangContentPapua();
+        tentangSection.innerHTML = getHardcodedTentangContentPapua(currentIsland);
     }
 });
 
@@ -50,22 +50,22 @@ function loadContent(currentIsland, currentNavLinks) {
         // Directly set the hardcoded "tentang" section
         const tentangSection = document.getElementById('kontainer');
         if (currentIsland === 'jawa') {
-            tentangSection.innerHTML = getHardcodedTentangContentJawa();
+            tentangSection.innerHTML = getHardcodedTentangContentJawa(currentIsland);
         }
         else if (currentIsland === 'bali') {
-            tentangSection.innerHTML = getHardcodedTentangContentBali(); 
+            tentangSection.innerHTML = getHardcodedTentangContentBali(currentIsland); 
         }
         else if (currentIsland === 'sumatera') {
-            tentangSection.innerHTML = getHardcodedTentangContentSumatera();   
+            tentangSection.innerHTML = getHardcodedTentangContentSumatera(currentIsland);   
         }
         else if (currentIsland === 'kalimantan') {
-            tentangSection.innerHTML = getHardcodedTentangContentKalimantan();
+            tentangSection.innerHTML = getHardcodedTentangContentKalimantan(currentIsland);
         }
         else if (currentIsland === 'sulawesi') {
-            tentangSection.innerHTML = getHardcodedTentangContentSulawesi();
+            tentangSection.innerHTML = getHardcodedTentangContentSulawesi(currentIsland);
         }
         else if (currentIsland === 'papua') {
-            tentangSection.innerHTML = getHardcodedTentangContentPapua();
+            tentangSection.innerHTML = getHardcodedTentangContentPapua(currentIsland);
         }
         return;
     }
@@ -76,17 +76,17 @@ function loadContent(currentIsland, currentNavLinks) {
             // Replace the content of the "kontainer" section
             const kontainerSection = document.getElementById('kontainer');
             kontainerSection.innerHTML = ''; // Clear existing content
-            kontainerSection.innerHTML = generateHTML(data);
+            kontainerSection.innerHTML = generateHTML(data, currentIsland);
         })
         .catch(error => {
             console.error('Error:', error);
         });
 }
 
-function generateHTML(data) {
+function generateHTML(data, currentIsland) {
     // Generate the HTML for the content using the fetched data
     let html = `
-        <div class="bg-curve" style="background-image: url('{{ asset('images/mainContent/jawa/img/core-img/curve.png') }}');"></div>
+        <div class="bg-curve" style="background-image: url('${getBackgroundImageURL(currentIsland)}');"></div>
         <div class="gallery__page">
             <div class="gallery__warp float-element" id="popup">
                 <div class="row">
@@ -107,14 +107,33 @@ function generateHTML(data) {
             </div>
         </div>
         `;
-
     return html;
 }
-// With this updated code, when visiting an currentIsland page, the "Tentang" link will have the active class by default. When you click on other links, the active class will be removed from the current active link and added to the clicked link. The content of the "tentang" section will be dynamically replaced with the generated content based on the clicked link's data.
 
-function getHardcodedTentangContentJawa() {
+function getBackgroundImageURL(currentIsland) {
+    if (currentIsland === 'jawa') {
+        return '/images/mainContent/jawa/img/core-img/curve.png';
+    }
+    else if (currentIsland === 'bali') {
+        return '/images/mainContent/bali/img/core-img/curve.png';
+    }
+    else if (currentIsland === 'sumatera') {
+        return '/images/mainContent/sumatera/img/core-img/curve.png';
+    }
+    else if (currentIsland === 'kalimantan') {
+        return '/images/mainContent/kalimantan/img/core-img/curve.png';
+    }
+    else if (currentIsland === 'sulawesi') {
+        return '/images/mainContent/sulawesi/img/core-img/curve.png';
+    }
+    else if (currentIsland === 'papua') {
+        return '/images/mainContent/papua/img/core-img/curve.png';
+    }
+}
+
+function getHardcodedTentangContentJawa(island) {
     return `
-        <div class="bg-curve" style="background-image: url('{{ asset('images/mainContent/jawa/img/core-img/curve.png') }}');">
+        <div class="bg-curve" style="background-image: url('${getBackgroundImageURL(island)}');">
         </div>
         <div class="gallery__page">
         <div class="gallery__warp float-element" id="popup">
@@ -187,9 +206,9 @@ function getHardcodedTentangContentJawa() {
         </div>
     `
 }
-function getHardcodedTentangContentBali(){
+function getHardcodedTentangContentBali(island){
     return `
-        <div class="bg-curve" style="background-image: url('{{ asset('images/mainContent/bali/img/core-img/curve.png') }}');">
+        <div class="bg-curve" style="background-image: url('${getBackgroundImageURL(island)}');">
         </div>
         <div class="gallery__page">
         <div class="gallery__warp float-element" id="popup">
@@ -257,10 +276,10 @@ function getHardcodedTentangContentBali(){
         </div>
     `
 }
-function getHardcodedTentangContentSumatera(){
+function getHardcodedTentangContentSumatera(island){
     return `
         <div class="bg-curve"
-        style="background-image: url('{{ asset('images/mainContent/sumatera/img/core-img/curve.png') }}');"></div>
+        style="background-image: url('${getBackgroundImageURL(island)}');"></div>
         <div class="gallery__page">
             <div class="gallery__warp float-element" id="popup">
             <div class="row">
@@ -331,10 +350,10 @@ function getHardcodedTentangContentSumatera(){
         </div>
     `
 }
-function getHardcodedTentangContentKalimantan(){
+function getHardcodedTentangContentKalimantan(island){
     return `
         <div class="bg-curve"
-        style="background-image: url('{{ asset('images/mainContent/kalimantan/img/core-img/curve.png') }}');"></div>
+        style="background-image: url('${getBackgroundImageURL(island)}');"></div>
         <div class="gallery__page">
             <div class="gallery__warp float-element" id="popup">
             <div class="row">
@@ -394,10 +413,10 @@ function getHardcodedTentangContentKalimantan(){
         </div>
     `
 }
-function getHardcodedTentangContentSulawesi(){
+function getHardcodedTentangContentSulawesi(island){
     return `
         <div class="bg-curve"
-        style="background-image: url('{{ asset('images/mainContent/sulawesi/img/core-img/curve.png') }}');"></div>
+        style="background-image: url('${getBackgroundImageURL(island)}');"></div>
         <div class="gallery__page">
             <div class="gallery__warp float-element" id="popup">
             <div class="row">
@@ -462,9 +481,9 @@ function getHardcodedTentangContentSulawesi(){
         </div>
     `
 }
-function getHardcodedTentangContentPapua(){
+function getHardcodedTentangContentPapua(island){
     return `
-        <div class="bg-curve" style="background-image: url('{{ asset('images/mainContent/papua/img/core-img/curve.png') }}');">
+        <div class="bg-curve" style="background-image: url('${getBackgroundImageURL(island)}');">
         </div>
         <div class="gallery__page">
         <div class="gallery__warp float-element" id="popup">
@@ -529,3 +548,4 @@ function getHardcodedTentangContentPapua(){
         </div>
     `
 }
+
