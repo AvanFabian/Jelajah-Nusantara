@@ -231,7 +231,7 @@
                   </div>
                   <div class="col-md-6">
                      <div class="info-box text-center">
-                        <h3 class="h3qr">Our website URL</h3>
+                        <h3 class="h3qr">GitHub Repository</h3>
                         <div id="qrcode"></div>
                      </div>
                   </div>

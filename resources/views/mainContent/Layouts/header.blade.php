@@ -2,8 +2,21 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-4 col-md-3 order-2 order-sm-1">
-                <a href="./index.html" class="site-logo">
-                    <img src="{{ asset('images/mainContent/jawa/img/logo.png') }}" alt>
+                <a href="#" class="site-logo">
+                    @if($currentIsland == 'jawa')   
+                        <img src="{{ asset('images/mainContent/jawa/img/logo.png') }}" alt>
+                    @elseif($currentIsland == 'bali')
+                        <img src="{{ asset('images/mainContent/bali/img/logo.png') }}" alt>
+                    @elseif($currentIsland == 'sumatera')
+                        <img src="{{ asset('images/mainContent/sumatera/img/logo.png') }}" alt>
+                    @elseif($currentIsland == 'kalimantan')
+                        <img src="{{ asset('images/mainContent/kalimantan/img/logo.png') }}" alt>
+                    @elseif($currentIsland == 'sulawesi')
+                        <img src="{{ asset('images/mainContent/sulawesi/img/logo.png') }}" alt>
+                    @elseif($currentIsland == 'papua')
+                        <img src="{{ asset('images/mainContent/papua/img/logo.png') }}" alt>
+                    @endif
+
                 </a>
                 <div class="header__social">
                     <!-- <a href="#"><i class="fa fa-home" aria-hidden="false""></i></a>
@@ -28,9 +41,9 @@
         </div>
         <nav class="main__menu">
             <ul class="nav__menu">
-                <li><a href="{{ route('island.content.show', ['island' => $currentIsland, 'content' => 'tentang']) }}" data-island="{{ $currentIsland }}">Tentang</a></li>
+                <li><a href="{{ route('island.content.show', ['island' => $currentIsland, 'content' => 'tentang']) }}" data-island="{{ $currentIsland }}" class="menu--active">Tentang</a></li>
                 <li><a href="{{ route('island.content.show', ['island' => $currentIsland, 'content' => 'taritradisional']) }}" data-island="{{ $currentIsland }}">Tari Tradisional</a></li>
-                <li><a href="{{ route('island.content.show', ['island' => $currentIsland, 'content' => 'legenda']) }}" data-island="{{ $currentIsland }}">Legenda</a></li>
+                <li><a href="{{ route('island.content.show', ['island' => $currentIsland, 'content' => 'legenda']) }}" data-island="{{ $currentIsland }}">Legenda</a></li>  
                 <li><a href="{{ route('island.content.show', ['island' => $currentIsland, 'content' => 'budayaunik']) }}" data-island="{{ $currentIsland }}">Budaya Unik</a></li>
                 <li><a href="{{ route('island.content.show', ['island' => $currentIsland, 'content' => 'wisata']) }}" data-island="{{ $currentIsland }}">Wisata</a></li>
             </ul> 

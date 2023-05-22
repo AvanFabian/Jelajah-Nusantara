@@ -3,8 +3,8 @@
 @section('title', 'Jawa')
 @section('content')
    {{-- 5 content section for Tentang, Tari Tradisional, legenda, budaya unik, wisata --}}
-   <section id="tentang">
-      <div class="bg-curve" style="background-image: url('{{ asset('images/mainContent/jawa/img/core-img/curve.png') }}');">
+   <section id="kontainer">
+      {{-- <div class="bg-curve" style="background-image: url('{{ asset('images/mainContent/jawa/img/core-img/curve.png') }}');">
       </div>
       <div class="gallery__page">
          <div class="gallery__warp float-element" id="popup">
@@ -13,7 +13,7 @@
                   <h1 class="animated-text" style="text-align: center; font-family: 'Lobster', cursive; color: #9E6F21    ;">
                      Selamat Datang di <br><span class="">Pulau Jawa</span></h1>
 
-                  <p class="description" style="font-size: 20px; font-family: Helvetica Neue", Arial, sans-serif;">
+                  <p class="description animated-text" style="font-size: 20px; font-family: Helvetica Neue", Arial, sans-serif;">
                      Selamat datang di Pulau Jawa, tempat di mana keindahan budaya, sejarah yang kaya, dan pesona alam yang
                      menawan bergabung
                      dalam harmoni yang memukau. Di sini, kami mengajak Anda untuk menjelajahi kekayaan dan keunikan Pulau
@@ -74,11 +74,11 @@
          </div>
       </div>
       </div>
-      </div>
+      </div> --}}
       <!-- END SECTION tentang -->
    </section>
 
-   <section id="taritradisional">
+   {{-- <section id="taritradisional">
       <!-- START SECTION TARI -->
       <!-- END SECTION TARI -->
    </section>
@@ -94,7 +94,7 @@
    </section>
 
    <section id="wisata">
-        <!-- START SECTION WISATA -->
-        <!-- END SECTION WISATA -->
-   </section>
+      <!-- START SECTION WISATA -->
+      <!-- END SECTION WISATA -->
+   </section> --}}
 @endsection

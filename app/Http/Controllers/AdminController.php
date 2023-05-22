@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\CardsIsland;
 use App\Models\User;
+// DB facade
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -46,7 +48,7 @@ class AdminController extends Controller
             'thumbnailLink' => 'required',
             'ytLink' => 'required',
         ]);
-        
+
         $card = new CardsIsland();
         $card->pulau = $request->input('pulau');
         $card->contents = $request->input('jenisKonten');
@@ -63,18 +65,21 @@ class AdminController extends Controller
     {
         $request->validate([
             'idKonten' => 'required',
-            'pulau' => 'required',
-            'thumbnailLink' => 'required',
-            'ytLink' => 'required',
         ]);
 
         $id = $request->input('idKonten');
+        // dd($id);
         $card = CardsIsland::where('id', $id)->first();
         if ($card) {
             $card->pulau = $request->input('pulau');
+            $card->contents = $request->input('jenisKonten');
             $card->thumbnailLink = $request->input('thumbnailLink');
             $card->ytLink = $request->input('ytLink');
             $card->save();
+            return redirect()->route('admin.dashboard')
+                ->with('success', 'Pulau Content Data has been updated successfully.');
+        } else {
+            return redirect()->route('admin.dashboard')->with('error', 'ID Kontent tidak ditemukan');
         }
     }
 
@@ -89,6 +94,9 @@ class AdminController extends Controller
         $card = CardsIsland::where('id', $id)->first();
         if ($card) {
             $card->delete();
+            return redirect()->route('admin.dashboard')->with('deleted', 'Pulau Content Data has been deleted successfully.');
+        } else {
+            return redirect()->route('admin.dashboard')->with('error', 'ID Kontent tidak ditemukan');
         }
     }
 
@@ -112,9 +120,13 @@ class AdminController extends Controller
     public function showContent($island, $content)
     {
         // Fetch the content data from the database based on the $island and $content values
+        // $data = CardsIsland::where('pulau', $island)
+        //     ->where('contents', $content)
+        //     ->first();
+        // Fetch the content data from the database based on the $island and $content values and make it as array
         $data = CardsIsland::where('pulau', $island)
             ->where('contents', $content)
-            ->first();
+            ->get()->toArray();
         return response()->json($data);
     }
     // Debugging Content
@@ -131,22 +143,22 @@ class AdminController extends Controller
     public function uploadProfilePicture(Request $request)
     {
         $file = $request->file('profilePicture');
-        
+
         if ($request->hasFile('profilePicture')) {
             $request->validate([
                 'profilePicture' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
             ]);
             // Generate a unique filename for the uploaded image
             $filename = uniqid() . '.' . $file->getClientOriginalExtension();
-    
+
             // Store the file in the desired storage disk
             $path = $file->storeAs('public/img/profile', $filename);
-    
+
             // Update the user's profile picture column in the database
             $user = auth()->user();
             $user->profile_photo_path = $path;
             $user->save();
-    
+
             // Return a response indicating success
             return response()->json(['message' => 'Profile picture uploaded successfully']);
         }

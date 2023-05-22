@@ -86,6 +86,8 @@
                                  <tr>
                                     <th>ID</th>
                                     <th>Pulau</th>
+                                    <th>Jenis Konten</th>
+                                    <th>Thumbnail Link</th>
                                     <th>Youtube Link</th>
                                  </tr>
                               </thead>
@@ -94,6 +96,8 @@
                                     <tr>
                                        <td>{{ $content->id }}</td>
                                        <td>{{ $content->pulau }}</td>
+                                       <td>{{ $content->contents }}</td>
+                                       <td>{{ $content->thumbnailLink }}</td>
                                        <td>{{ $content->ytLink }}</td>
                                     </tr>
                                  @endforeach
@@ -214,7 +218,7 @@
                      <!-- /.card-header -->
                      <div class="card-body p-0">
                         <div class="d-md-flex">
-                           <div class="p-1 flex-fill" style="overflow: hidden">
+                           <div class="p-1 flex-fill mb-4" style="overflow: hidden">
                               {{-- Section UPDATE / DELETE Konten --}}
                               <form action="{{ route('explore.update-content') }}" method="POST" class="update-form">
                                  @csrf
@@ -223,17 +227,34 @@
                                     <div class="col-10">
                                        <div class="mb-3">
                                           <label for="idKonten" class="form-label">Id Konten (Delete Cukup Masukkan ID)</label>
-                                          <input type="text" class="form-control" id="idKonten" name="idKonten"
-                                             required>
+                                          <input type="text" class="form-control" id="idKonten" name="idKonten">
                                        </div>
                                     </div>
                                  </div>
+
                                  <div class="row">
                                     <div class="col-10">
                                        <div class="mb-3">
                                           <label for="pulau" class="form-label">Huruf Kecil Nama Pulau</label>
-                                          <input type="text" class="form-control" id="pulau" name="pulau"
-                                             required>
+                                          <input type="text" class="form-control" id="pulau" name="pulau">
+                                       </div>
+                                    </div>
+                                 </div>
+
+                                 <div class="row">
+                                    <div class="col-10">
+                                       <div class="mb-3">
+                                          <label for="jenisKonten" class="form-label">Jenis Konten</label>
+                                          <input type="text" class="form-control" id="jenisKonten" name="jenisKonten">
+                                       </div>
+                                    </div>
+                                 </div>
+
+                                 <div class="row">
+                                    <div class="col-10">
+                                       <div class="mb-3">
+                                          <label for="thumbnailLink" class="form-label">Thumbnail Link</label>
+                                          <input type="text" class="form-control" id="thumbnailLink" name="thumbnailLink">
                                        </div>
                                     </div>
                                  </div>
@@ -242,8 +263,7 @@
                                     <div class="col-10">
                                        <div class="mb-3">
                                           <label for="ytLink" class="form-label">Youtube Content Link</label>
-                                          <input type="text" class="form-control" id="ytLink" name="ytLink"
-                                             required>
+                                          <input type="text" class="form-control" id="ytLink" name="ytLink">
                                        </div>
                                     </div>
                                  </div>   
@@ -257,21 +277,26 @@
                                              <button type="button" class="btn-close" data-bs-dismiss="alert"
                                                 aria-label="Close"></button>
                                           </div>
+                                       @elseif (session('deleted'))
+                                          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                             {{ session('deleted') }}
+                                             <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                aria-label="Close"></button>
+                                          </div>
+                                       @elseif (session('error'))
+                                          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                             {{ session('error') }}
+                                             <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                aria-label="Close"></button>
+                                          </div>
                                        @endif
                                        <button type="submit" class="btn btn-success me-3">Update Card Content</button>
-                              </form>
-                              {{-- form delete --}}
-                              <div class="row mt-2">
-                                 <div class="col-10">
-                                    <div class="mb-3">
                                        <form action="{{ route('explore.delete-content') }}" method="POST">
                                           @csrf
                                           @method('DELETE')
                                           <button type="submit" class="btn btn-danger">Delete Card Content</button>
                                        </form>
-                                    </div>
-                                 </div>
-                              </div>
+                              </form>
                            </div>
                         </div>
                      </div>

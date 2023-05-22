@@ -4,8 +4,8 @@
 
 @section('content')
    {{-- 5 content section for Tentang, Tari Tradisional, legenda, budaya unik, wisata --}}
-   <section id="tentang">
-      <div class="bg-curve"
+   <section id="kontainer">
+      {{-- <div class="bg-curve"
          style="background-image: url('{{ asset('images/mainContent/sumatera/img/core-img/curve.png') }}');"></div>
       <div class="gallery__page">
          <div class="gallery__warp float-element" id="popup">
@@ -74,90 +74,7 @@
          </div>
       </div>
       </div>
-      </div>
+      </div> --}}
       <!-- END SECTION tentang -->
    </section>
-   <div id="tarisumatera">
-      <!-- START SECTION TARI -->
-      <section id="taritradisional">
-         <div class="bg-curve" style="background-image: url(./img/core-img/curve.png);"></div>
-         <div class="gallery__page">
-            <div class="gallery__warp float-element" id="popup">
-               <div class="row">
-                  <!-- konten 1 -->
-                  <div class="col-lg-3 col-md-4 col-sm-6">
-                     <a class="gallery__item fresco" href="https://youtu.be/65A5Uo513Rw" data-fresco-group="gallery"
-                        data-fancybox title="keong mas">
-                        <img src="https://img.youtube.com/vi/65A5Uo513Rw/maxresdefault.jpg" alt="Video Thumbnail">
-                        <i class="fa fa-play" aria-hidden="true"></i>
-                     </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- END SECTION TARI -->
-      </section>
-   </div>
-   <div id="legendasumatera">
-      <!-- START SECTION TARI -->
-      <section id="legenda">
-         <div class="bg-curve" style="background-image: url(./img/core-img/curve.png);"></div>
-         <div class="gallery__page">
-            <div class="gallery__warp float-element" id="popup">
-               <div class="row">
-                  <!-- konten 1 -->
-                  <div class="col-lg-3 col-md-4 col-sm-6">
-                     <a class="gallery__item fresco" href="https://youtu.be/65A5Uo513Rw" data-fresco-group="gallery"
-                        data-fancybox title="keong mas">
-                        <img src="https://img.youtube.com/vi/65A5Uo513Rw/maxresdefault.jpg" alt="Video Thumbnail">
-                        <i class="fa fa-play" aria-hidden="true"></i>
-                     </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- END SECTION TARI -->
-      </section>
-   </div>
-   <div id="budayauniksumatera">
-      <section id="budaya">
-         <div class="bg-curve" style="background-image: url(./img/core-img/curve.png);"></div>
-         <div class="gallery__page">
-            <div class="gallery__warp float-element" id="popup">
-               <div class="row">
-                  <!-- konten 1 -->
-                  <div class="col-lg-3 col-md-4 col-sm-6">
-                     <a class="gallery__item fresco" href="https://youtu.be/65A5Uo513Rw" data-fresco-group="gallery"
-                        data-fancybox title="keong mas">
-                        <img src="https://img.youtube.com/vi/65A5Uo513Rw/maxresdefault.jpg" alt="Video Thumbnail">
-                        <i class="fa fa-play" aria-hidden="true"></i>
-                     </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- END SECTION TARI -->
-      </section>
-   </div>
-   <div id="wisatasumatera">
-      <section id="wisata">
-         <div class="bg-curve" style="background-image: url(./img/core-img/curve.png);"></div>
-         <div class="gallery__page">
-            <div class="gallery__warp float-element" id="popup">
-               <div class="row">
-                  <!-- konten -->
-                  <div class="col-lg-3 col-md-4 col-sm-6">
-                     <a class="gallery__item fresco" href="https://youtu.be/65A5Uo513Rw" data-fresco-group="gallery"
-                        data-fancybox title="keong mas">
-                        <img src="https://img.youtube.com/vi/65A5Uo513Rw/maxresdefault.jpg" alt="Video Thumbnail">
-                        <i class="fa fa-play" aria-hidden="true"></i>
-                     </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-   </div>
-
-   <script src=""></script>
 @endsection
