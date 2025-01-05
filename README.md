@@ -1,4 +1,4 @@
-# WebKebudayaan
+# Jelajah Nusantara
 
 # Created by Avan Fabian & Web Dev Lecture Team
 # Tech Stack :
