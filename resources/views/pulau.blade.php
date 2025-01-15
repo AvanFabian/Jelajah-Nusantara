@@ -44,12 +44,11 @@
             </div>
          </div>
          <div class="carousel-item">
-            <img alt="pulau_indonesia" class="d-block w-100" src="{{ asset('images/project-1-img/home-3.jpg') }}">
+            <img alt="pulau_indonesia" class="d-block w-100" src="{{ asset('images/project-1-img/bali1.jpg') }}">
             <div class="carousel-caption">
-               <h5>True Construction</h5>
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt excepturi
-                  quas vero.</p>
-               <p><a class="btn btn-warning mt-3" href="#">Learn More</a></p>
+               <h5>Pulau Bali</h5>
+               <p>Pemandangan Alam dan Bangunan yang Indah pada Sore Hari Menjelang Petang</p>
+               <p><a class="btn btn-warning mt-3" href="#">Detail Tempat</a></p>
             </div>
          </div>
          <div class="carousel-item">
