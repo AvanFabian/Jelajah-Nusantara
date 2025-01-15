@@ -37,20 +37,20 @@
 
 ## <a name="pages">🤸 Pages</a>
 
-| Splash Screen                                                                                                  
+| Landing Page                                                                                                  
 | -----------------------------------------------------------------------------
-| <img src="https://github.com/AvanFabian/AppTebakGambar/blob/main/assets/docs/splash.png" width="550" />
+| <img src="https://github.com/AvanFabian/Jelajah-Nusantara/blob/main/public/github_readme/1.png" width="1080" />
 
-| Quiz Dashboard Screen                                                         
+| Main Section 1                                                         
 | ----------------------------------------------------------------------------- 
-| <img src="https://github.com/AvanFabian/AppTebakGambar/blob/main/assets/docs/quizhome.png" width="275" /> 
+| <img src="https://github.com/AvanFabian/Jelajah-Nusantara/blob/main/public/github_readme/2.png" width="1080" /> 
 
-| Settings Screen                                                               
+| Main Section 2                                                               
 | -----------------------------------------------------------------------------
-| <img src="https://github.com/AvanFabian/AppTebakGambar/blob/main/assets/docs/settings.png" width="275" /> 
+| <img src="https://github.com/AvanFabian/Jelajah-Nusantara/blob/main/public/github_readme/3.png" width="1080" /> 
 
-| Leveling Screen                                                              
+| Main Section 3                                                              
 | ----------------------------------------------------------------------------- 
-| <img src="https://github.com/AvanFabian/AppTebakGambar/blob/main/assets/docs/level.png" width="275" />
+| <img src="https://github.com/AvanFabian/Jelajah-Nusantara/blob/main/public/github_readme/4.png" width="1080" />
 
 
