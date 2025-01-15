@@ -37,10 +37,15 @@
 
 ## <a name="pages">🤸 Pages</a>
 
+| Admin Section 1                                                              
+| ----------------------------------------------------------------------------- 
+| <img src="https://github.com/AvanFabian/Jelajah-Nusantara/blob/main/public/github_readme/5.png" width="1080" />
+| Admin Section 2                                                              
+| ----------------------------------------------------------------------------- 
+| <img src="https://github.com/AvanFabian/Jelajah-Nusantara/blob/main/public/github_readme/6.png" width="1080" />
 | Landing Page                                                                                                  
 | -----------------------------------------------------------------------------
 | <img src="https://github.com/AvanFabian/Jelajah-Nusantara/blob/main/public/github_readme/1.png" width="1080" />
-
 | Main Section 1                                                         
 | ----------------------------------------------------------------------------- 
 | <img src="https://github.com/AvanFabian/Jelajah-Nusantara/blob/main/public/github_readme/2.png" width="1080" /> 
