@@ -57,7 +57,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::prefix('admin')->group(function () {
     // Middleware Untuk Proteksi Route dari User Biasa atau Bukan Admin
     Route::get('/getUsers', [AdminController::class, 'getUsers'])->name('admin.getUsers');
-    Route::middleware(['CekAdminLogin'])->group(function () {
+    // Route::middleware(['CekAdminLogin'])->group(function () {
         // Users data Route Controller
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
         // Store New Card Content Data
@@ -68,7 +68,7 @@ Route::prefix('admin')->group(function () {
         Route::delete('/explore/detail-explore', [AdminController::class, 'destroy'])->name('explore.delete-content');
         // Authorize users role to be admin Route Controller
         Route::post('/manageUsers', [AdminController::class, 'manageUsers'])->name('admin.manageUsers');
-    });
+    // });
 });
 
 
